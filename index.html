@@ -1,0 +1,25 @@
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <script type = "text/javascript" src="script.js"></script>
+        <link rel ="stylesheet" href="style.css">
+        <title>Name Comparator</title>
+        <h2>Name Compatability Checker</h2>
+    </head>
+    <body>
+        <h3>Enter two first names to check their compatability!</h3>
+        <form method ="POST">
+            <label for="mfirstname">His First Name</label>
+            <input type="text" id="mfirstname" name="mfirstnames" placeholder= "David">
+
+            <label for="ffirstname">Her First Name</label>
+            <input type="text" id="ffirstname" name="ffirstnames" placeholder= "Veronica">
+
+            <input type ="button" value = "Compare!" id="compare" onClick="compute();"></button>
+            <div id ="Answer"></div>
+
+        </form>
+    </body>
+    
+</html>
