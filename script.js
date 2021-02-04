@@ -86,31 +86,13 @@ function arrayAdd(...array){//Does that weird calculation to return the value of
         console.log("Array after calculation is: "+ array2);
         arrayAdd(...array2);
     }
+    DispAns("88%");
     return (array2[0]+array2[1]);
-    // for (let i=0;i<Array.length;i++)
-    // {
-    //     console.log("Array at index"+i+"="+Array[i]);
-    //     length=length + 1;
-    //     console.log("variable length" + length);
-    // }
-    // console.log("final variable length" + length);
-    // console.log("lenght:"+ Array.length);
+    
+}
 
-    //while(Array.length>2)
-     //{
-    //     for(let val=0;val<Array.length;val++)
-    //     {
-    //         array2.push(Array[val]+Array[Array.length-val])
-           
-    //         for (let i=0;i<Array.length;i++)
-    //             console.log(Array[i]); 
-    //     }
-        
-    //     for (let i=0;i<array2.length;i++)
-    //         console.log(array2[i]); 
-        
-        
-       // arrayAdd(array2);
-    //}
-    //return (Array[0]+Array[1]);
+function DispAns(aString)
+{
+    let ans = aString;
+   document.getElementById("Answer").innerHTML=ans;
 }
