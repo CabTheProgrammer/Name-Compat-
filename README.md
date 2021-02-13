@@ -19,3 +19,4 @@ This program is implemented with html,JavaScript and maybe CSS.
 
 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1cc6efef-58cb-4f22-8f1a-db105421059b/deploy-status)](https://app.netlify.com/sites/elated-mayer-d8632a/deploys)
