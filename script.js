@@ -16,6 +16,10 @@ function letterCount(word,letter){ //returns the number of times a letter repeat
 
 
 function compute(){
+
+    //rewrites the entire webpage
+    //document.write("<div class=\"loader\"></div>");
+
     let hisName = document.getElementById("mfirstname").value;
     let herName = document.getElementById("ffirstname").value;
 
@@ -86,8 +90,10 @@ function arrayAdd(...array){//Does that weird calculation to return the value of
         console.log("Array after calculation is: "+ array2);
         arrayAdd(...array2);
     }
-    DispAns("88%");
-    return (array2[0]+array2[1]);
+    load(fixUp(Array[0],Array[1]));
+    //DispAns();
+
+    //return (array2[0]+array2[1]);
     
 }
 
@@ -95,4 +101,113 @@ function DispAns(aString)
 {
     let ans = aString;
    document.getElementById("Answer").innerHTML=ans;
+ 
 }
+
+function fixUp(aString1,aString2){ //This function will take the output from the calculation and reformat it into a "percentage"
+console.log("First String(function): "+ aString1);  
+console.log("Second String: "+ aString2);  
+let Ans = "";
+let message = "";
+
+    // if(aString1== undefined || aString2== undefined)
+    //  {   Ans = "0%";
+    //     console.log("Hey youd");
+    //     return Ans;
+    // }
+
+    if(aString2>9)
+    {
+        aString2 = aString2%10;
+        aString1 = aString1+(Math.round((aString2/10))); 
+        Ans=aString1.toString() +aString2.toString + "%";
+        
+        if(aString1 > 9 || aString2>9)
+            Ans = "100%"
+        return Ans;
+    }
+else
+    {
+        aString1 = aString1.toString();
+        aString2 = aString2.toString();
+        Ans = aString1.concat(aString2,"%");
+    }
+    
+    return Ans;
+}
+
+
+
+
+//Copied code
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
+
+
+  function load(onn){
+    console.log("The value for onn is: "+onn);
+
+    let x = document.createElement("div");
+    x.classList.add("loader");
+
+    let style= document.createElement("style");
+    style.innerHTML = `
+    #box{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        width:100%;
+        background-color: #844fff; 
+    }
+    
+    `;
+    
+        console.log("I am summoned");
+        //Empties the element called "box"
+        document.getElementById("box").innerHTML="";
+        
+        //Adds the loading icon
+        document.getElementById("box").appendChild(x);
+        
+        //Styling
+        document.head.appendChild(style);        
+         
+
+        
+        setTimeout(function(){displayANS(onn,kashaQuotes(onn));}, 2500);
+    }
+
+    
+    function displayANS(anum,quote)
+    {
+       let Ans = document.createElement("div");
+       let Quote = document.createElement("div");
+       Quote.classList.add("Quote");
+       Ans.classList.add("Answer");
+
+       let box = document.getElementById("box");
+       box.removeChild(box.childNodes[0]);
+       
+       Ans.innerHTML = anum;
+       Quote.innerHTML ="<br>"+quote;
+
+       box.appendChild(Ans);
+       box.appendChild(Quote); 
+    }
+
+    function kashaQuotes(aValue){ //returns a random quote based on value passed. 1 is good quote, 2 is bad
+    let messageGood = ["\“Love takes off masks that we fear we cannot live without and know we cannot live within.\”","\“The most important thing in life is to learn how to give out love, and to let it come in.\”",+
+                        "\“We are shaped and fashioned by what we love.\”"];
+
+    let messageBad = ["Love is a promise delivered already broken","My wife and I were happy for twenty years. Then we met.","A kiss may ruin a human life"];
+    
+    if(aValue>50)
+            return messageGood[getRandomInt(0,2)];
+        else
+            return messageBad[getRandomInt(0,2)];
+    }
+   

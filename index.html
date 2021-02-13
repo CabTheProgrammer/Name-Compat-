@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script type = "text/javascript" src="script.js"></script>
-        <link rel ="stylesheet" href="styles.css">
+        <link rel ="stylesheet" href="styles2.css">
         
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -13,26 +13,34 @@
         <link rel="manifest" href="favicon/site.webmanifest">
         
         <title>Name Comparator</title>
-        <h2>Name Compatability Checker</h2>
+        
     </head>
     <body>
+        <div id="box">
+        <h2>Name Compatibility Checker</h2>
         <h3>Enter two first names to check their compatability!</h3>
         <form method ="POST">
             <div class ="formelements">
                 <label for="mfirstname">His First Name</label>
-                <input type="text" id="mfirstname" name="mfirstnames" placeholder= "David">
+                <input type="text" id="mfirstname" name="mfirstnames" placeholder= "">
             </div>
             
             <div class = "formelements">
                 <label for="ffirstname">Her First Name</label>
-                <input type="text" id="ffirstname" name="ffirstnames" placeholder= "Veronica">
+                <input type="text" id="ffirstname" name="ffirstnames" placeholder= "">
             </div>
 
-            <div id = "AnswerSec"></div>
-                <input type ="button" value = "Compare!" id="compare" onClick="compute();"></button>
-                <div id ="Answer"></div>
+            
+                <input id="BUTTON" type ="button" value = "COMPARE" id="compare" onClick="compute();"></button>
+               
             </div>
+
+            <!-- <div id ="Answer"></div>
+            <div id ="subtext"></div> -->
+
         </form>
+
+
     </body>
     
 </html>
