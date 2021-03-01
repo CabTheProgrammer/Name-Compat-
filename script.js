@@ -205,6 +205,9 @@ function getRandomInt(min, max) {
 
     let messageBad = ["Love is a promise delivered already broken","My wife and I were happy for twenty years. Then we met.","A kiss may ruin a human life"];
     
+    aValue=aValue.slice(0,2);
+    aValue=parseInt(aValue);
+     //BUGFIX! The reason why the wrong quote was printing was because the percentage sign was included in the comparison
     if(aValue>50)
             return messageGood[getRandomInt(0,2)];
         else
