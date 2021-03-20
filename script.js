@@ -166,7 +166,7 @@ function getRandomInt(min, max) {
     
     `;
     
-        console.log("I am summoned");
+        
         //Empties the element called "box"
         document.getElementById("box").innerHTML="";
         
