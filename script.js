@@ -1,5 +1,3 @@
-
-
 function letterCount(word,letter){ //returns the number of times a letter repeats in a word
     word = word.trim();
     word = word.toLowerCase();
@@ -184,10 +182,13 @@ function getRandomInt(min, max) {
     
     function displayANS(anum,quote)
     {
+       let bttn = document.createElement("button");
+       bttn.onclick = "reload()";
        let Ans = document.createElement("div");
        let Quote = document.createElement("div");
        Quote.classList.add("Quote");
        Ans.classList.add("Answer");
+       Ans.classList.add(bttn);
 
        let box = document.getElementById("box");
        box.removeChild(box.childNodes[0]);
