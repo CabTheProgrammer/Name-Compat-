@@ -182,7 +182,7 @@ function getRandomInt(min, max) {
         
         #BUTTON{
             margin:20%;
-            height:15%;
+            height:20%;
             font-size:1em;
         }
     }
