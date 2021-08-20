@@ -152,16 +152,41 @@ function getRandomInt(min, max) {
     x.classList.add("loader");
 
     let style= document.createElement("style");
-    style.innerHTML = `
+    // This is the CSS styling for the loading and quote screens
+    style.innerHTML = `                                
     #box{
-        display:flex;
+        display:grid;
+        grid-auto-flow: row;
         justify-content:center;
         align-items:center;
 
-        width:100%;
+        width:50%;
         background-color: #844fff; 
     }
     
+    body{
+        font-family:'Noto Sans JP',sans-serif;
+        display:flex;
+        justify-content: center;
+    }
+
+    @media (max-width:600px){
+        html{
+            font-size:large;
+        }
+    
+        #box{
+            padding-top:25%;
+            width:100%;
+        }
+        
+        #BUTTON{
+            margin:20%;
+            height:15%;
+            font-size:1em;
+        }
+    }
+
     `;
     
         console.log("I am summoned");
@@ -176,28 +201,33 @@ function getRandomInt(min, max) {
          
 
         
-        setTimeout(function(){displayANS(onn,kashaQuotes(onn));}, 2500);
+        setTimeout(function(){displayANS(onn,kashaQuotes(onn));}, 2500); //Tells how long for the loading animation was 2500
     }
 
     
     function displayANS(anum,quote)
     {
        let bttn = document.createElement("button");
-       bttn.onclick = "reload()";
+       bttn.innerHTML = "Return";
+       bttn.id = "BUTTON";
+       bttn.onclick = function(){location.reload()};
+
        let Ans = document.createElement("div");
        let Quote = document.createElement("div");
        Quote.classList.add("Quote");
        Ans.classList.add("Answer");
-       Ans.classList.add(bttn);
-
+      
+        
        let box = document.getElementById("box");
        box.removeChild(box.childNodes[0]);
        
+
        Ans.innerHTML = anum;
        Quote.innerHTML ="<br>"+quote;
 
        box.appendChild(Ans);
-       box.appendChild(Quote); 
+       box.appendChild(Quote);
+       box.appendChild(bttn); 
     }
 
     function kashaQuotes(aValue){ //returns a random quote based on value passed. 1 is good quote, 2 is bad
